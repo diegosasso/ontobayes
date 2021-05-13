@@ -1,0 +1,18 @@
+Package: ontobayes
+Type: Package
+Title: Ontology-aware Bayesian Phylogenetic Information Analysis of Morphological Data
+Version: 0.1.0
+Date: 2021-13-05
+Author: Diego S. Porto
+Maintainer: Diego S. Porto <diegosporto@gmail.com>
+Description: This package provides tools for assessing the Bayesian phylogenetic 
+  information (BPI) content and phylogenetic dissonance among data subsets 
+  structured with ontology knowledge. It further provides useful exploratory 
+  visualization tools to investigate the information content of morphological data.
+License: GPL (>= 2)
+Depends: R (>= 3.4.0), ape (>= 5.4.1)
+Imports: phytools, ontologyIndex, rphenoscape, rwty, stringr
+Suggests: ontologyIndex, rphenoscape
+Language: en-US
+Encoding: UTF-8
+RoxygenNote: 7.1.1

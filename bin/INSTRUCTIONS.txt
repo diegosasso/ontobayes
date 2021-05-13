@@ -1,0 +1,19 @@
+# -------- IF WINDOWS USER -------- #
+#
+# This folder should contain the binary files of MrBayes and Galax (includind boots libraries).
+# 
+# MrBayes binary file should be named 'mb.exe'.
+# Galax binary file should be named 'galax.exe'.
+#
+# References:
+# MrBayes: 
+# Ronquist, F., Teslenko, M., Van Der Mark, P., Ayres, D. L., Darling, A., Höhna, S., et al. (2012). 
+# MrBayes 3.2: efficient Bayesian phylogenetic inference and model choice across a large model space. 
+# Systematic biology, 61(3), 539-542. [https://doi.org/10.1093/sysbio/sys029]
+# 
+# Galax: 
+# Lewis, P. O., Chen, M. H., Kuo, L., Lewis, L. A., Fučíková, K., Neupane, S., et al. (2016). 
+# Estimating Bayesian phylogenetic information content. 
+# Systematic biology, 65(6), 1009-1023. [https://doi.org/10.1093/sysbio/syw042]
+#
+# --------------------------------- #

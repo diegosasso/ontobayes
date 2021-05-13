@@ -1,0 +1,72 @@
+#' Import and summarize results from analyses set by the galaxscrip function.
+#'
+#' @param ids data.frame, matches between characters and anatomical entities. 
+#'   The first column should provide character ids in the same order as presented in the character matrix. 
+#'   The second column should provide the respective ontology ids referring to the anatomical entities. 
+#'   The third column should provide the respective ontology terms referring to the anatomical entities.
+#'   See examples provided in the data folder (data1.csv and data2.csv).
+#'
+#' @return A matrix with values of posterior coverage, Bayesian phylogenetic information, and phylogenetic dissonance
+#'   among mcmc runs for each subset of data defined by an anatomy ontology term. 
+#'
+#' @examples
+#' \dontrun{
+#' # HAO example #
+#' # Create ID object #
+#' ID <- as.data.frame(cbind(paste0("C", 1:40),
+#' c(rep("HAO:0000506",5), rep("HAO:0000513",5), rep("HAO:0000453",5), rep("HAO:0000234",5), 
+#' rep("HAO:0001003",5), rep("HAO:0000874",5), rep("HAO:0000583",5), rep("HAO:0000630",5)),
+#' c(rep("mandible",5), rep("maxilla",5), rep("labium",5), rep("cranium",5)
+#' , rep("tentorium",5), rep("prothorax",5), rep("mesothorax",5), rep("metathorax",5))))
+#'
+#' # Import and summarize results #
+#' runs1 <- bayesinfo(ids = ID)
+#'
+#' # UBERON example #
+#' # Create ID object #
+#' ID <- as.data.frame(cbind(paste0("C", 1:40),
+#' c(rep("UBERON_0002244",5), rep("UBERON_0002397",5), rep("UBERON_0004742",5), rep("UBERON_2000658",5), 
+#' rep("UBERON_2000488",5), rep("UBERON_0000151",5), rep("UBERON_0000152",5), rep("UBERON_0003097",5)),
+#' c(rep("premaxilla",5), rep("maxilla",5), rep("dentary",5), rep("epibranchial bone",5)
+#' , rep("ceratobranchial bone",5), rep("pectoral fin",5), rep("pelvic fin",5), rep("dorsal fin",5))))
+#'
+#' # Import and summarize results #
+#' runs2 <- bayesinfo(ids = ID)
+#' }
+#'
+#' @export
+bayesinfo <- function(ids = ids)
+{
+
+  # Load all query terms #
+  tags <- ids
+  
+  # Create vector for the file names #
+  x <- gsub(tags[,3], pattern = " ", replacement = "_")
+  x <- gsub(x, pattern = "/", replacement = "-")
+  x <- unique(x)
+  
+  # Create a vector to store coverage, information and dissonance values #
+  w <- numeric()
+  
+  for(i in 1:length(x)){
+  
+    # Read all .txt files and extract coverage, information and dissonance values #
+	z <- readLines(paste0("./GALAX/OUTPUT/all_partitions/", "galax_", x[i], ".txt"))
+	z <- strsplit(z[grep(z, pattern = "merged")[3]], split = " ")
+	suppressWarnings(z <- as.numeric(z[[1]]))
+	z <- z[!is.na(z)][c(2,6,8)]
+	
+	# Store results #
+	w <- rbind(w, z)
+  
+  }
+  
+  # Name all rows and columns matrix #
+  colnames(w) <- c("Cover", "Info", "Disso")
+  rownames(w) <- x
+  
+  # Return results #
+  return(w)
+
+}

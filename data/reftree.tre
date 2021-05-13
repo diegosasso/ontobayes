@@ -1,0 +1,22 @@
+#NEXUS
+[ID: 9921988547]
+begin taxa;
+	dimensions ntax=5;
+	taxlabels
+		sp1
+		sp2
+		sp3
+		sp4
+		sp5
+		;
+end;
+begin trees;
+	translate
+		1	sp1,
+		2	sp2,
+		3	sp3,
+		4	sp4,
+		5	sp5
+		;
+   tree con_50_majrule = [&U] (1[&prob=1.00000000e+000,prob_stddev=0.00000000e+000,prob_range={1.00000000e+000,1.00000000e+000},prob(percent)="100",prob+-sd="100+-0"]:1.106536e-001[&length_mean=1.30520653e-001,length_median=1.10653600e-001,length_95%HPD={1.51509900e-002,2.92914200e-001}],2[&prob=1.00000000e+000,prob_stddev=0.00000000e+000,prob_range={1.00000000e+000,1.00000000e+000},prob(percent)="100",prob+-sd="100+-0"]:2.057710e-002[&length_mean=3.23069504e-002,length_median=2.05771000e-002,length_95%HPD={4.35816600e-006,1.05611300e-001}],(3[&prob=1.00000000e+000,prob_stddev=0.00000000e+000,prob_range={1.00000000e+000,1.00000000e+000},prob(percent)="100",prob+-sd="100+-0"]:1.871714e-002[&length_mean=3.22422968e-002,length_median=1.87171400e-002,length_95%HPD={3.08183000e-006,1.09498000e-001}],(4[&prob=1.00000000e+000,prob_stddev=0.00000000e+000,prob_range={1.00000000e+000,1.00000000e+000},prob(percent)="100",prob+-sd="100+-0"]:1.251428e-002[&length_mean=1.97973109e-002,length_median=1.25142800e-002,length_95%HPD={1.03975200e-005,6.11647500e-002}],5[&prob=1.00000000e+000,prob_stddev=0.00000000e+000,prob_range={1.00000000e+000,1.00000000e+000},prob(percent)="100",prob+-sd="100+-0"]:1.221996e-002[&length_mean=1.92214752e-002,length_median=1.22199600e-002,length_95%HPD={2.71308600e-005,6.12087000e-002}])[&prob=9.99334221e-001,prob_stddev=9.41553637e-004,prob_range={9.98668442e-001,1.00000000e+000},prob(percent)="100",prob+-sd="100+-0"]:1.117353e-001[&length_mean=1.30413753e-001,length_median=1.11735300e-001,length_95%HPD={1.89799100e-002,2.78783700e-001}])[&prob=9.89347537e-001,prob_stddev=5.64932182e-003,prob_range={9.85352863e-001,9.93342210e-001},prob(percent)="99",prob+-sd="99+-1"]:1.148237e-001[&length_mean=1.37290621e-001,length_median=1.14823700e-001,length_95%HPD={2.33655900e-002,3.13264000e-001}]);
+end;
