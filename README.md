@@ -1,6 +1,6 @@
 ## This is the development version of the R package _ontobayes_.
 
-This is a package under development. Please report any bugs or issues. 
+This is a package under development. Please report any bugs or issues.
 
 Installation.
 ```
@@ -11,4 +11,4 @@ library(ontobayes)
 ```
 
 The manuscript describing the package, including examples of usage, can be found at:
-https://doi.org/XXXXXX/XXXX/XXXX
+https://doi.org/10.1093/sysbio/syac022
